@@ -1,0 +1,50 @@
+---
+import astroLogo from '../assets/astro.svg';
+---
+<div class="container">
+	<div id="headerIcon">
+		<img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" />
+		<h3>MAEL GAUDRON</h3>
+	</div>
+	<nav id="navbar">
+		<ul>
+			<li>RESTER ACTIF</li>
+			<li>PROPOSITIONS</li>
+			<li>AVIS</li>
+			<li>OFFRES</li>
+			<li>CONTACT</li>
+		</ul>
+	</nav>
+</div>
+
+<style>
+	.container {
+		display: flex;
+		justify-content:space-between;
+		padding: 2rem 10%;
+	}
+
+	#headerIcon {
+		display: flex;
+		gap: 0.5rem;
+		width: fit-content;
+		align-items: center;
+	}
+	#headerIcon h3 {
+		width: fit-content;
+	}
+
+	#navbar {
+		display: flex;
+		width: fit-content;
+	}
+	#navbar ul {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+		align-items: center;
+	}
+	@media screen and (max-width: 768px) {
+		
+	}
+</style>
