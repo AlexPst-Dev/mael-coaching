@@ -1,0 +1,77 @@
+:root {
+  --color-beige: #d7ceb2;
+  --color-rich-dark: #03191e;
+  --color-cyan: #80a4ed;
+  --color-pink: #e56b70;
+  --color-purple: #685369;
+
+  --gradient-step-0: #c06dc4;
+  --gradient-step-33: #e9aceb;
+  --gradient-step-70: #f9e7fa;
+  --gradient-step-100: #ffffff;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.purple-txt {
+  color: var(--color-purple);
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    220deg,
+    var(--gradient-step-0) 0%,
+    var(--gradient-step-33) 30%,
+    var(--gradient-step-70) 60%,
+    var(--gradient-step-100) 100%
+  );
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+li,
+p {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,112 @@
+---
+import socialIcon from '../assets/social-icon.svg';
+import healthIcon from '../assets/health-icon.svg';
+import activityIcon from '../assets/activity-icon.svg';
+---
+
+<div class="banner">
+    <div class="left-part">
+        <div class="titles">
+            <h1>MAEL GAUDRON</h1>
+            <h2><span class="purple-txt">ACTIVEZ</span> VOTRE NOUVELLE VIE !</h2>
+        </div>
+        <div class="banner-items">
+            <div class="banner-item">
+                <img src={activityIcon.src} width="96" height="96" alt="activity icon" class="banner-item-icon" />
+                <div class="banner-txt">
+                    <h3 id="banner-activity-title">DÉPENSEZ-VOUS</h3>
+                    <p>Sans compter, évitez la sédentarité</p>
+                </div>
+            </div>
+            <div class="banner-item">
+                <img src={socialIcon.src} width="96" height="96" alt="social icon" class="banner-item-icon" />
+                <div class="banner-txt">
+                    <h3 id="banner-social-title">SOCIABILSEZ</h3>
+                    <p>Avec les autres membres</p>
+                </div>
+            </div>
+            <div class="banner-item">
+                <img src={healthIcon.src} width="96" height="96" alt="health icon" class="banner-item-icon" />
+                <div class="banner-txt">
+                    <h3 id="banner-health-title">PRÉSERVEZ</h3>
+                    <p>Votre santé au fil des années</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-part">
+        <img src={socialIcon.src} class="img-coach"/>
+    </div>
+</div>
+
+<style>
+    .banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .banner .left-part {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .banner .right-part .img-coach {
+        width: 561px;
+        height: 742px;
+    }
+
+    .titles {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .titles h1, .titles h2 {
+        margin: 0;
+    }
+
+    .banner-items {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    .banner-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .banner-txt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner-item h3, .banner-item p {
+        margin: 0;
+    }
+    #banner-activity-title {
+        color: var(--color-purple);
+        font-size: 1.5rem;
+    }
+    #banner-social-title {
+        color: var(--color-cyan);
+        font-size: 1.5rem;
+    }
+    #banner-health-title {
+        color: var(--color-pink);
+        font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .banner {
+            flex-direction: column;
+        }
+        .banner-items {
+            flex-direction: column;
+        }
+        .banner .right-part .img-coach {
+        width: 100%;
+        height: 300px;
+        }
+    }
+</style>

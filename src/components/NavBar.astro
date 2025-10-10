@@ -1,13 +1,17 @@
 ---
-import astroLogo from '../assets/astro.svg';
+import flameLogo from '../assets/flame-icon.svg';
+import menuIcon from '../assets/menu-icon.svg';
+import closeIcon from '../assets/close-icon.svg';
+
 ---
-<div class="container">
+<div class="nav-container">
 	<div id="headerIcon">
-		<img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" />
+		<img src={flameLogo.src} width="32" height="32" alt="Astro Homepage" />
 		<h3>MAEL GAUDRON</h3>
 	</div>
 	<nav id="navbar">
 		<ul>
+			<img src={closeIcon.src} width="32" height="32" alt="close button" class="close-btn" id="closeMenuBtn"/>
 			<li>RESTER ACTIF</li>
 			<li>PROPOSITIONS</li>
 			<li>AVIS</li>
@@ -15,13 +19,32 @@ import astroLogo from '../assets/astro.svg';
 			<li>CONTACT</li>
 		</ul>
 	</nav>
+	<img src={menuIcon.src} width="32" height="32" alt="hamburger button" class="hambuger-btn" id="openMenuBtn" />
 </div>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    const openBtn = document.getElementById('openMenuBtn');
+    const closeBtn = document.getElementById('closeMenuBtn');
+
+    openBtn?.addEventListener('click', () => {
+      navbar.style.display = 'flex';
+    });
+
+    closeBtn?.addEventListener('click', () => {
+      navbar.style.display = 'none';
+    });
+  });
+</script>
+
 <style>
-	.container {
+	.nav-container {
 		display: flex;
 		justify-content:space-between;
 		padding: 2rem 10%;
+		align-items: center;
+		position: relative;
 	}
 
 	#headerIcon {
@@ -32,6 +55,7 @@ import astroLogo from '../assets/astro.svg';
 	}
 	#headerIcon h3 {
 		width: fit-content;
+		margin: 0;
 	}
 
 	#navbar {
@@ -44,7 +68,46 @@ import astroLogo from '../assets/astro.svg';
 		list-style: none;
 		align-items: center;
 	}
+	#navbar li {
+		font-weight: 600;
+	}
+	.hambuger-btn, .close-btn {
+		display: none;
+	}
 	@media screen and (max-width: 768px) {
-		
+		#navbar {
+			display: none;
+		}
+		.hambuger-btn, .close-btn {
+			display: flex;
+			cursor: pointer;
+		}
+		.close-btn {
+			align-self: end;
+		}
+		#navbar {
+			display: none;
+			width: fit-content;
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+			background-color: white;
+			border-radius: 1rem;
+			border-left: 1px solid lightgrey;
+			border-bottom: 2px solid lightgrey;
+			border-top: px solid lightgrey;
+			border-right: 2px solid lightgrey;
+		}
+		#navbar ul {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			list-style: none;
+			gap: 2rem;
+			padding: 0 2rem;
+		}
+		#navbar li {
+			font-weight: 600;
+		}
 	}
 </style>
