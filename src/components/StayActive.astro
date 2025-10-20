@@ -172,4 +172,50 @@
     left: -8rem;
     z-index: 3;
   }
+
+  @media screen and (max-width: 1300px) {
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    #thirdStatKPI {
+      font-size: 3rem;
+    }
+
+    .circle-progress {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      top: -6rem;
+      right: -2rem;
+      z-index: 4;
+    }
+
+    .circle-progress .kpi-indicator {
+      width: 100px;
+      height: 100px;
+    }
+
+    .thirdStat {
+      margin-top: 6rem;
+    }
+
+    .thirdStat .box {
+      bottom: 0;
+      left: 0;
+      position: relative;
+    }
+
+    .firstStat,
+    .secondStat {
+      width: 100%;
+    }
+
+    .grid .paragraph {
+      width: 100%;
+    }
+  }
 </style>
