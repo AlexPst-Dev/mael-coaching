@@ -1,0 +1,202 @@
+---
+import arrowIcon from "../assets/arrow-icon.svg";
+---
+
+<div class="section-container">
+  <h2>CE QUE JE VOUS PROPOSE</h2>
+
+  <!-- grid wrapper for the three equal columns -->
+  <div class="activities-grid">
+    <div class="activity" id="act-1" role="img" aria-label="Activity 1">
+      <h3>Activité</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet sit
+        facilis iure vel fuga maxime reiciendis eius quod nihil.
+      </p>
+      <button class="btnSubscribe">
+        S'inscrire
+        <img src={arrowIcon.src} alt="Icone fleche" />
+      </button>
+    </div>
+    <div class="activity" id="act-2" role="img" aria-label="Activity 2">
+      <h3>Social</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet sit
+        facilis iure vel fuga maxime reiciendis eius quod nihil.
+      </p>
+      <button class="btnSubscribe">
+        S'inscrire
+        <img src={arrowIcon.src} alt="Icone fleche" />
+      </button>
+    </div>
+    <div class="activity" id="act-3" role="img" aria-label="Activity 3">
+      <h3>Santé</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet sit
+        facilis iure vel fuga maxime reiciendis eius quod nihil.
+      </p>
+      <button class="btnSubscribe">
+        S'inscrire
+        <img src={arrowIcon.src} alt="Icone fleche" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .activity {
+    min-height: 80vh;
+    width: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    /* animation */
+    transition:
+      transform 300ms ease,
+      box-shadow 300ms ease,
+      filter 300ms ease;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end;
+    padding: 0 0 1rem 1rem;
+    gap: 1rem;
+  }
+  .activity h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .activity h3,
+  .activity p {
+    color: white;
+    margin: 0;
+  }
+
+  #act-1 {
+    background-color: var(--color-purple);
+  }
+  #act-2 {
+    background-color: var(--color-cyan);
+  }
+  #act-3 {
+    background-color: var(--color-pink);
+  }
+
+  .btnSubscribe img {
+    display: block;
+    transition: filter 300ms ease;
+    filter: none;
+  }
+
+  .btnSubscribe:hover img {
+    filter: brightness(0) invert(1);
+  }
+
+  @media screen and (max-width: 1300px) {
+    .activities-grid {
+      grid-template-columns: 1fr;
+    }
+    .activity {
+      min-height: 60vh;
+    }
+  }
+
+  /* Desktop-only interactive behaviour: switch to flex so hovered item expands smoothly */
+  @media screen and (min-width: 1301px) {
+    .activities-grid {
+      display: flex;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    /* base flex so columns are equal */
+    .activity {
+      flex: 1 1 0;
+      transition:
+        flex 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 300ms ease,
+        box-shadow 300ms ease,
+        filter 300ms ease;
+    }
+
+    /* hide details by default on desktop:
+       use max-height + overflow to animate height (can't animate height:auto) */
+    .activity p {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition:
+        max-height 350ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 320ms ease 80ms,
+        transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .activity .btnSubscribe {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition:
+        max-height 350ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 320ms ease 120ms,
+        transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* hovered item grows */
+    .activities-grid .activity:hover {
+      flex: 1.8 1 0;
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+    }
+
+    /* reveal text and button with the same timing as the flex animation */
+    .activities-grid .activity:hover p {
+      max-height: 300px; /* should be >= expected content height */
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .activities-grid .activity:hover .btnSubscribe {
+      max-height: 80px; /* enough for the button */
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* non-hovered items shrink a bit and move down */
+    .activities-grid .activity:not(:hover) {
+      flex: 0.9 1 0;
+      transform: translateY(4px);
+      filter: saturate(0.95) brightness(0.97);
+    }
+
+    /* prevent layout jump when moving pointer between items */
+    .activities-grid:hover .activity {
+      /* ensure transitions apply while any hover is active */
+    }
+  }
+</style>

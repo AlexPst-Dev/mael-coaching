@@ -48,6 +48,7 @@ body {
     var(--gradient-step-50) 40%,
     var(--gradient-step-100) 100%
   );
+  color: var(--color-rich-dark);
 }
 
 h1,
@@ -79,4 +80,23 @@ p {
   h2 {
     font-size: 1.5rem;
   }
+}
+
+.btnSubscribe {
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  border-radius: 2rem;
+  background-color: white;
+  color: var(--color-rich-dark);
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.btnSubscribe:hover {
+  background-color: var(--color-rich-dark);
+  color: white;
 }
