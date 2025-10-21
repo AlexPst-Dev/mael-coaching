@@ -95,8 +95,34 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: fit-content;
 }
 .btnSubscribe:hover {
   background-color: var(--color-rich-dark);
   color: white;
+}
+
+.btnSubscribe img {
+  display: block;
+  transition: filter 300ms ease;
+  filter: none;
+}
+
+.btnSubscribe:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.btnSubscribe--dark {
+  color: white;
+  background-color: var(--color-rich-dark);
+}
+.btnSubscribe--dark img {
+  transition: filter 300ms ease;
+}
+.btnSubscribe--dark:hover {
+  background-color: white;
+  color: var(--color-rich-dark);
+}
+.btnSubscribe--dark:hover img {
+  filter: brightness(0) invert(0);
 }

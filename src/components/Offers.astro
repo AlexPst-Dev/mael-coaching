@@ -1,0 +1,125 @@
+---
+import arrowIcon from "../assets/arrow-icon.svg";
+import arrowWhiteIcon from "../assets/arrow-white-icon.svg";
+---
+
+<div class="section-container">
+  <h2>MES OFFRES</h2>
+  <div class="list-offers">
+    <div class="offer" id="basic">
+      <h3>BASIC</h3>
+      <p>Profitez de 10 séances lorem ipsum dolore sit amet.</p>
+      <span class="price">29 €/mois</span>
+      <ul class="list-offer-item">
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+      </ul>
+      <button class="btnSubscribe">
+        S'inscrire
+        <img src={arrowIcon.src} alt="Icone fleche" />
+      </button>
+    </div>
+    <div class="offer" id="pro">
+      <h3>PRO</h3>
+      <p>Profitez de 10 séances lorem ipsum dolore sit amet. Profitez de 10 séances lorem ipsum dolore sit amet.</p>
+      <span class="price">79 €/mois</span>
+      <ul class="list-offer-item">
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+      </ul>
+      <button class="btnSubscribe btnSubscribe--dark">
+        S'inscrire
+        <img src={arrowWhiteIcon.src} alt="Icone fleche" />
+      </button>
+    </div>
+    <div class="offer" id="prenium">
+      <h3>PRENIUM</h3>
+      <p>Profitez de 10 séances lorem ipsum dolore sit amet.</p>
+      <span class="price">259 €/mois</span>
+      <ul class="list-offer-item">
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+        <li><img src={arrowIcon.src} /><p>Lorem ipsum</p></li>
+      </ul>
+      <button class="btnSubscribe">
+        S'inscrire
+        <img src={arrowIcon.src} alt="Icone fleche" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .list-offers {
+    display: flex;
+    width: 100%;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: white;
+    padding: 4rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  }
+  .offer h3,
+  .offer .price {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .offer .price {
+    font-weight: 700;
+    font-family: "Roboto", Arial, sans-serif;
+  }
+  .offer .btnSubscribe {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+  }
+  .offer .list-offer-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+  .offer .list-offer-item li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .offer .list-offer-item li img {
+    transform: rotate(45deg);
+  }
+  .offer .list-offer-item li p {
+    margin: 0;
+  }
+
+  #basic,
+  #prenium {
+    flex: 0.8;
+  }
+  #pro {
+    flex: 1;
+    background-color: var(--color-pink);
+    height: 60vh;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .list-offers {
+        flex-direction: column;
+    }
+    .offer {
+        gap: 0.5rem;
+    }
+    .offer h3,
+  .offer .price {
+    font-size: 2rem;
+  }
+  }
+</style>
