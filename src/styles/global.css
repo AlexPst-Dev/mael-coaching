@@ -73,6 +73,16 @@ p {
   font-size: 1.25rem;
 }
 
+label {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 600;
+}
+textarea,
+input {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 3rem;
