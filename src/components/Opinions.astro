@@ -1,0 +1,60 @@
+---
+import Opinion from "./Opinion.astro";
+---
+
+<div class="section-container">
+  <h2>ILS SONT DEJA CONVAINCU</h2>
+  <div class="opinion-list">
+    <Opinion
+      firstName="Alexandre"
+      lastName="PROUST"
+      age="24"
+      city="Rennes"
+      comment="What a coach my boy !"
+      note={4}
+    />
+    <Opinion
+      firstName="Alexandre"
+      lastName="PROUST"
+      age="24"
+      city="Rennes"
+      comment=`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, nisi. Reiciendis
+  consequuntur quibusdam voluptate porro modi, et nobis perspiciatis cumque natus
+  molestiae expedita dicta iusto ipsa eum tenetur? Enim, quibusdam.`
+      note={4}
+    />
+    <Opinion
+      firstName="Alexandre"
+      lastName="PROUST"
+      age="24"
+      city="Rennes"
+      comment=`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, nisi. Reiciendis
+  consequuntur quibusdam voluptate porro modi, et nobis perspiciatis cumque natus
+  molestiae expedita dicta iusto ipsa eum tenetur? Enim, quibusdam.`
+      note={4}
+    />
+    <Opinion
+      firstName="Alexandre"
+      lastName="PROUST"
+      age="24"
+      city="Rennes"
+      comment=`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, nisi. Reiciendis
+  consequuntur quibusdam voluptate porro modi, et nobis.`
+      note={4}
+    />
+  </div>
+</div>
+
+<style>
+  .opinion-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  @media screen and (max-width: 1300px) {
+    .opinion-list {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  }
+</style>

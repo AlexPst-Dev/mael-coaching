@@ -1,0 +1,85 @@
+---
+import starIcon from "../assets/star-icon.svg";
+
+interface Props {
+  firstName: string;
+  lastName: string;
+  age: string;
+  city: string;
+  comment: string;
+  note: number;
+}
+
+const { firstName, lastName, age, city, comment, note } = Astro.props;
+---
+
+<div class="opinion">
+  <div class="opinion-header">
+    <div class="circle-pp"></div>
+    <div class="title">
+      <p style="font-weight: bold;">{firstName} {lastName}</p>
+      <p>{age} ans, {city}</p>
+    </div>
+    <div class="stars">
+      {
+        Array.from({ length: note }).map(() => (
+          <img src={starIcon.src} alt="Icone etoile" />
+        ))
+      }
+    </div>
+  </div>
+  <div class="opinion-body">
+    <p>
+      {comment}
+    </p>
+  </div>
+</div>
+
+<style>
+  .opinion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+    min-width: 40%;
+    height: fit-content;
+    flex: 1;
+  }
+  .opinion p {
+    margin: 0;
+  }
+
+  .opinion-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .opinion-header .circle-pp {
+    background-color: grey;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+  }
+  .opinion-header .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .opinion-header .stars {
+    margin-left: auto;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .opinion-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .opinion-header .stars {
+      margin-left: 0;
+    }
+  }
+</style>
